@@ -7,7 +7,8 @@ import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 import { HiDownload } from "react-icons/hi";
 import Image from "next/image";
-import GridGlobe from "./ui/GridGlobe";
+import dynamic from "next/dynamic";
+const GridGlobe = dynamic(() => import('./ui/GridGlobe'), { ssr: false });
 import { World } from "./ui/Globe";
 
 const Hero = () => {

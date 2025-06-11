@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import Lottie from "react-lottie";
 import { motion } from "framer-motion";
 import { IoCopyOutline } from "react-icons/io5";
 import { useState } from "react";
@@ -10,7 +9,10 @@ import BorderMagicButton from "./border-magic-button";
 import animationData from "@/constants/confetti.json";
 import GridGlobe from "./GridGlobe";
 import { BackgroundGradientAnimation } from "./background-gradient";
-
+import dynamic from "next/dynamic";
+const Lottie = dynamic(() => import("react-lottie"), {
+  ssr: false,
+});
 export const BentoGrid = ({
   className,
   children,
